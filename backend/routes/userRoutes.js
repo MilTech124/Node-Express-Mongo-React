@@ -1,10 +1,18 @@
-const express = require('express')
-const router = express.Router()
-const {registerUser,loginUser,getMe} = require('../controllers/userController')
+const express = require('express');
+const router = express.Router();
 
-const {protect} = require('../middleware/authMiddleware')
+// bring logic from the controllers folder
+const { registerUser, loginUser, getMe } = require('../controllers/userController');
 
-router.post('/', registerUser)
-router.post('/login', loginUser)
-router.get('/me',protect, getMe)
-module.exports = router
+// Bring in middleware to protect routes
+const {protect}= require('../middleware/authMiddleware')
+
+// apply controllers logic here in place of req,res
+// example: router.method(path, logic)
+router.post('/', registerUser);
+router.post('/login', loginUser);
+
+// protected route
+router.get('/me',protect, getMe);
+
+module.exports = router;
