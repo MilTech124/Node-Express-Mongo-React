@@ -29,7 +29,7 @@ if(process.env.NODE_ENV==='production'){
     //set Build folder as static
     app.use(express.static(path.join(__dirname,'../frontend/build')))
 
-    app.get('*',(req,res)=>res.sendFile(__dirname,'../','fontend','build','index.html'))
+    app.get('*',(req,res)=>res.sendFile(__dirname,'../','frontend','build','index.html'))
 }else{
     app.get('/', (req, res) => {
         res.json({ message: "Welcome to Hung's support desk" })
