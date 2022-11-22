@@ -38,4 +38,4 @@ if(process.env.NODE_ENV==='production'){
 
 app.use(errorHandler)
 
-app.listen(port, () => console.log(`Running on port ${PORT}`))
+app.listen(PORT () => console.log(`Running on port ${PORT}`))
