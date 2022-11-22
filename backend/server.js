@@ -32,7 +32,7 @@ if(process.env.NODE_ENV==='production'){
     app.get('*',(req,res)=>res.sendFile(__dirname,'../','frontend','build','index.html'))
 }else{
     app.get('/', (req, res) => {
-        res.json({ message: "Welcome to Hung's support desk" })
+        res.status(200).json({ message: "Welcome to Hung's support desk" })
     })
 }
 
